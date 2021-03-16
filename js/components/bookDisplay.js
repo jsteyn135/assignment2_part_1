@@ -8,11 +8,12 @@ app.component('book-display', {
     },
     template:
         /*html*/
-        `<ul class="col-sm-12 col-md-6 col-xl-4">
+        `
+        <ul class="col-sm-12 col-md-6 col-xl-4">
          <a class="list-group-item list-group-item-action active" href="this.bookObj.selfLink">{{this.bookObj.volumeInfo.title}}</a>
         <li class="list-group-item">{{this.bookObj.volumeInfo.authors}}</li>
         <li class="list-group-item"> {{this.bookObj.volumeInfo.publisher}}, {{this.bookObj.volumeInfo.publishedDate}}</li>
-        </ul`,
+        </ul>`,
 
     computed: {
         bookObj() {
@@ -21,6 +22,7 @@ app.component('book-display', {
             else
                 return null;
         }
+        
 
     }
 

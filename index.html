@@ -14,37 +14,51 @@
 <body>
 
     <div id="app">
-        <form @submit.prevent="searchGoogleBooks">
+        <form id="searchForm" @submit.prevent="searchGoogleBooks(0)">
             <fieldset class="border">
                 <legend class="w-auto">Google Book Search</legend>
                 <div class="row form-group">
                     <label for="txtSearch" class="col-sm-1 col-form-label"> keyword: </label>
                     <div class="col-sm-5 col-lg-4">
-                        <input type="text" id="txtSearch" name="txtSearch" class="form-control" 
-                        v-model="keyword">
+                        <input type="text" id="txtSearch" name="txtSearch" class="form-control" v-model="keyword">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-sm-4">
-                        <button type="submit" class="btn btn-primary" >search</button>
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-primary">search</button>
                         <button type="reset" class="btn btn-secondary">Reset</button>
 
                     </div>
-
+                    <div class="nextLastButtons">
+                        <button v-if="result != null" id="lastButton" type="button" class="btn btn-primary"
+                        
+                        >Last</button>
+                        <button v-if="result != null && result.items !=0" id="nextButton" type="submit" class="btn btn-primary"
+                        onclick="mountedApp.testFunc()"
+                        >Next</button>
+                    </div>
 
 
                 </div>
 
             </fieldset>
         </form>
-        <div id="mainDiv" >
+        <div id="mainDiv">
             <div class="row col-sm-5" v-if="result!= null">found {{(result != null)? result.totalItems:''}}</div>
-            <div class="row">
-
-                <book-display v-if="result != null" v-for="(book, index) in result.items" :key="book.id" :book="JSON.stringify(book)"></book-display>
+            <div id="theResults" class="row">
+                <book-display v-if="result != null" v-for="(book, index) in result.items" :key="book.id"
+                    :book="JSON.stringify(book)"></book-display>
             </div>
-
+            <!--
+            <div class="nextLastButtons">
+                <button v-if="result != null" id="lastButton" type="button" class="btn btn-primary"
+                
+                >Last</button>
+                <button v-if="result != null && result.items !=0" id="nextButton" type="submit" class="btn btn-primary"
+                onclick="mountedApp.testFunc()"
+                >Next</button>
+            </div>-->
             
 
         </div>
@@ -69,9 +83,13 @@
     <!--<script src="js/script.js"></script>-->
     <script src="js/main.js"></script>
     <script src="js/components/bookDisplay.js"></script>
+
+
     <script>
         const mountedApp = app.mount("#app");
     </script>
+
+
 </body>
 <footer>
 

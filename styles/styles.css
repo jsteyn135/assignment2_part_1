@@ -1,3 +1,27 @@
 .hasError{
     color: red;
 }
+
+#lastButton{
+    position:absolute;
+    top:10%;
+    left:50%
+
+}
+
+
+
+
+#nextButton{
+    position:absolute;
+    top:10%;
+    left:60%
+}
+
+.invisible{
+    display:none;
+}
+
+.nextLastButtons{
+    
+}
