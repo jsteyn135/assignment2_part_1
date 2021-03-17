@@ -31,11 +31,11 @@
 
                     </div>
                     <div class="nextLastButtons">
-                        <button v-if="result != null" id="lastButton" type="button" class="btn btn-primary"
-                        
+                        <button v-show="result != null && this.currentIndex >=20" id="lastButton" type="submit" class="btn btn-primary"
+                        onclick="mountedApp.prevFunc()"
                         >Last</button>
                         <button v-if="result != null && result.items !=0" id="nextButton" type="submit" class="btn btn-primary"
-                        onclick="mountedApp.testFunc()"
+                        onclick="mountedApp.nextFunc()"
                         >Next</button>
                     </div>
 
@@ -50,17 +50,7 @@
                 <book-display v-if="result != null" v-for="(book, index) in result.items" :key="book.id"
                     :book="JSON.stringify(book)"></book-display>
             </div>
-            <!--
-            <div class="nextLastButtons">
-                <button v-if="result != null" id="lastButton" type="button" class="btn btn-primary"
-                
-                >Last</button>
-                <button v-if="result != null && result.items !=0" id="nextButton" type="submit" class="btn btn-primary"
-                onclick="mountedApp.testFunc()"
-                >Next</button>
-            </div>-->
             
-
         </div>
     </div>
 
