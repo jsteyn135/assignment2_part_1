@@ -7,3 +7,4 @@
 ❌ next page button does not disapear when on the last page of all the results (it should)(i didnt implement this and did not test it)    
 ✔  when searching a new keyword after already having searched something it now starts on the correct(first page)   
 
+⚒ still  need to fix the buttons lol  
