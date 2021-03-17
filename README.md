@@ -1,4 +1,11 @@
-# assignment2_part_1
+# assignment2_part_1 : Google book api search  
+
+### what it is?
+  a website/web application that allows the user to search for books in the google books api. it includes the ability to search using a keyword and then browsing 20 pages at a       time backwards/forwards. you can see the book's title, authors, publishers, publish date, page count, print type, and thumbnail.  
+
+
+  
+### features?  
 ✔  removed \[, \], \" from the authors names  
 ✔  added thumbnail when it exists, and placeholder image when it does not  
 ✔  added 2 other data fields to the template   
