@@ -3,19 +3,22 @@
 }
 
 #lastButton{
-    position:absolute;
+    /* position:absolute; 
     top:10%;
-    left:50%
-
+    left:50%*/
+    left:50%;
 }
 
 
 
 
 #nextButton{
+    /*
     position:absolute;
     top:10%;
-    left:60%
+    left:%*/
+    margin-left:10px;
+    
 }
 
 .invisible{
